@@ -28,7 +28,7 @@ data_source_1.AppDataSource.initialize().then(async (connection) => {
             phone: req.body.phone
         };
         const phone = await PhoneBookRepo.save(phoneData);
-        res.render("success");
+        res.redirect("/phone/list");
     });
     app.get("/phone/list", async (req, res) => {
         const phoneBooks = await PhoneBookRepo.find();
